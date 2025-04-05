@@ -1,10 +1,9 @@
 from flask import Flask
-app = Flask(__name__)
+   app = Flask(__name__)  # Must have this line
 
-@app.route('/')
-def hello_world():
-    return 'GrryMatters'
+   @app.route('/')
+   def home():
+       return "Bot is running!"
 
-
-if __name__ == "__main__":
-    app.run()
+   if __name__ == "__main__":
+       app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
