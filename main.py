@@ -1,13 +1,9 @@
-# bot.py
-from flask import Flask
-
-class Bot:
-    def __init__(self):
-        self.app = Flask(__name__)
-        
-    def run(self):
-        self.app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-
-# main.py
+import os
 from bot import Bot
-Bot().run()
+
+if __name__ == "__main__":
+    # For web apps (e.g., Flask/Django): Add host/port configuration
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 5000))  # Example for Flask
+    
+    # For non-web workers (e.g., Discord bots/scripts):
+    Bot().run()
